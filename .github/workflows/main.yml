@@ -1,3 +1,4 @@
+
 name: Build FITGENZ Android APK
 
 on:
@@ -23,6 +24,9 @@ jobs:
         with:
           channel: stable
           cache: true
+
+      - name: Generate Android project files
+        run: flutter create --platforms=android --project-name fitgenz .
 
       - name: Install dependencies
         run: flutter pub get
